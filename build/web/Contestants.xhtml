@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+<!--        <f:metadata>
+        <f:event type="preRenderView" listener="#{electorControler.load()}"/>
+        </f:metadata>-->
+    <h:body>
+        <h1>List Of Contestants</h1>
+      
+        <h:form>
+        <ol>
+            <ui:repeat value="#{contestantControler.retrive()}" var="temp">
+                <li>
+                    <h3><h:commandLink value="#{temp}" action="#{contestantControler.update(temp)}"/></h3>
+                </li>
+
+            </ui:repeat>
+        </ol>
+    </h:form>
+    </h:body>
+</html>
